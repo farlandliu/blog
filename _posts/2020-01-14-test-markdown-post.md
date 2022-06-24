@@ -4,9 +4,17 @@ layout: post
 description: A minimal example of using markdown with fastpages.
 categories: [markdown]
 title: An Example Markdown Post
+hide: true
 ---
 # Example Markdown Post
 
+## config post
+- hide a post
+in front matter: set `hide:true`
+- set social image
+```
+ - image: images/diagram.png
+```
 ## Basic setup
 
 Jekyll requires blog post files to be named according to the following format:
