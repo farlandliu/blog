@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>data engineering zoomcamp week 1 practise | farland blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="data engineering zoomcamp week 1 practise" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="data engineering zoomcamp week 1 practise" />
+<meta property="og:description" content="data engineering zoomcamp week 1 practise" />
+<link rel="canonical" href="https://farlandliu.github.io/blog/data/2022/06/24/data-camp-week-1.html" />
+<meta property="og:url" content="https://farlandliu.github.io/blog/data/2022/06/24/data-camp-week-1.html" />
+<meta property="og:site_name" content="farland blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-24T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="data engineering zoomcamp week 1 practise" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-24T00:00:00-05:00","datePublished":"2022-06-24T00:00:00-05:00","description":"data engineering zoomcamp week 1 practise","headline":"data engineering zoomcamp week 1 practise","mainEntityOfPage":{"@type":"WebPage","@id":"https://farlandliu.github.io/blog/data/2022/06/24/data-camp-week-1.html"},"url":"https://farlandliu.github.io/blog/data/2022/06/24/data-camp-week-1.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://farlandliu.github.io/blog/feed.xml" title="farland blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DC6K45G5VE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DC6K45G5VE');
+</script>
+
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">farland blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">data engineering zoomcamp week 1 practise</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-24T00:00:00-05:00" itemprop="datePublished">
+        Jun 24, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#data">data</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#data-engineering-zoomcamp-week-1-practise">data engineering zoomcamp week 1 practise</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#concepts-and-technology">concepts and technology</a></li>
+<li class="toc-entry toc-h2"><a href="#practise">Practise</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#1-setup-local-environment">1 setup local environment</a></li>
+<li class="toc-entry toc-h3"><a href="#2-run-postgres-in-docker">2. run Postgres in docker</a></li>
+<li class="toc-entry toc-h3"><a href="#3-import-taxi-data-to-postgres">3. import taxi data to Postgres</a></li>
+<li class="toc-entry toc-h3"><a href="#4-docker-compose">4. docker-compose</a></li>
+<li class="toc-entry toc-h3"><a href="#5-build-a-simple-pipline-with-docker">5. build a simple pipline with docker</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#additional-note">Additional Note</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#how-to-fix-column6-mixed-data-type">how to fix column(6) mixed data type?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h1 id="data-engineering-zoomcamp-week-1-practise">
+<a class="anchor" href="#data-engineering-zoomcamp-week-1-practise" aria-hidden="true"><span class="octicon octicon-link"></span></a>data engineering zoomcamp week 1 <strong>practise</strong>
+</h1>
+
+<h2 id="concepts-and-technology">
+<a class="anchor" href="#concepts-and-technology" aria-hidden="true"><span class="octicon octicon-link"></span></a>concepts and technology</h2>
+
+<ul>
+  <li>Data Lake &amp; Data Warehouse</li>
+  <li>Terraform Iac</li>
+  <li>Docker &amp; Docker-compose</li>
+  <li>SQL: Data Analysis &amp; Exploration</li>
+  <li>Airflow: Pipline Orchestration</li>
+  <li>DBT: data Transformation</li>
+  <li>parquet</li>
+</ul>
+
+<h2 id="practise">
+<a class="anchor" href="#practise" aria-hidden="true"><span class="octicon octicon-link"></span></a>Practise</h2>
+
+<h3 id="1-setup-local-environment">
+<a class="anchor" href="#1-setup-local-environment" aria-hidden="true"><span class="octicon octicon-link"></span></a>1 setup local environment</h3>
+<p>ref this <a href="https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/week_1_basics_n_setup">guide</a></p>
+
+<p>1). install docker and docker-compose
+2). install pgcli</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>libpq-dev python3-dev python3-venv
+<span class="nb">mkdir </span>zoomcamp
+<span class="nb">cd </span>zoomcamp &amp; python3 <span class="nt">-m</span> venv .venv
+<span class="nb">source</span> .venv/bin/activate
+pip <span class="nb">install </span>pip <span class="nt">-U</span>
+pip <span class="nb">install </span>pgcli
+
+</code></pre></div></div>
+
+<h3 id="2-run-postgres-in-docker">
+<a class="anchor" href="#2-run-postgres-in-docker" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. run Postgres in docker</h3>
+
+<p><img src="/blog/images/pgstart.png" alt="run postgres in docker"></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bash pg.sh
+The files belonging to this database system will be owned by user <span class="s2">"postgres"</span><span class="nb">.</span>
+This user must also own the server process.
+
+The database cluster will be initialized with locale <span class="s2">"en_US.utf8"</span><span class="nb">.</span>
+The default database encoding has accordingly been <span class="nb">set </span>to <span class="s2">"UTF8"</span><span class="nb">.</span>
+The default text search configuration will be <span class="nb">set </span>to <span class="s2">"english"</span><span class="nb">.</span>
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default <span class="nb">time </span>zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+initdb: warning: enabling <span class="s2">"trust"</span> authentication <span class="k">for </span><span class="nb">local </span>connections
+You can change this by editing pg_hba.conf or using the option <span class="nt">-A</span>, or
+<span class="nt">--auth-local</span> and <span class="nt">--auth-host</span>, the next <span class="nb">time </span>you run initdb.
+
+Success. You can now start the database server using:
+
+    pg_ctl <span class="nt">-D</span> /var/lib/postgresql/data <span class="nt">-l</span> logfile start
+
+waiting <span class="k">for </span>server to start....2022-06-27 07:38:35.587 UTC <span class="o">[</span>49] LOG:  starting PostgreSQL 13.5 <span class="o">(</span>Debian 13.5-1.pgdg110+1<span class="o">)</span> on x86_64-pc-linux-gnu, compiled by gcc <span class="o">(</span>Debian 10.2.1-6<span class="o">)</span> 10.2.1 20210110, 64-bit
+2022-06-27 07:38:35.587 UTC <span class="o">[</span>49] LOG:  listening on Unix socket <span class="s2">"/var/run/postgresql/.s.PGSQL.5432"</span>
+2022-06-27 07:38:35.590 UTC <span class="o">[</span>50] LOG:  database system was shut down at 2022-06-27 07:38:35 UTC
+2022-06-27 07:38:35.595 UTC <span class="o">[</span>49] LOG:  database system is ready to accept connections
+ <span class="k">done
+</span>server started
+CREATE DATABASE
+
+
+/usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/<span class="k">*</span>
+
+2022-06-27 07:38:35.813 UTC <span class="o">[</span>49] LOG:  received fast shutdown request
+waiting <span class="k">for </span>server to shut down....2022-06-27 07:38:35.813 UTC <span class="o">[</span>49] LOG:  aborting any active transactions
+2022-06-27 07:38:35.815 UTC <span class="o">[</span>49] LOG:  background worker <span class="s2">"logical replication launcher"</span> <span class="o">(</span>PID 56<span class="o">)</span> exited with <span class="nb">exit </span>code 1
+2022-06-27 07:38:35.816 UTC <span class="o">[</span>51] LOG:  shutting down
+2022-06-27 07:38:35.828 UTC <span class="o">[</span>49] LOG:  database system is shut down
+ <span class="k">done
+</span>server stopped
+
+PostgreSQL init process <span class="nb">complete</span><span class="p">;</span> ready <span class="k">for </span>start up.
+
+2022-06-27 07:38:35.941 UTC <span class="o">[</span>1] LOG:  starting PostgreSQL 13.5 <span class="o">(</span>Debian 13.5-1.pgdg110+1<span class="o">)</span> on x86_64-pc-linux-gnu, compiled by gcc <span class="o">(</span>Debian 10.2.1-6<span class="o">)</span> 10.2.1 20210110, 64-bit
+2022-06-27 07:38:35.941 UTC <span class="o">[</span>1] LOG:  listening on IPv4 address <span class="s2">"0.0.0.0"</span>, port 5432
+2022-06-27 07:38:35.941 UTC <span class="o">[</span>1] LOG:  listening on IPv6 address <span class="s2">"::"</span>, port 5432
+2022-06-27 07:38:35.942 UTC <span class="o">[</span>1] LOG:  listening on Unix socket <span class="s2">"/var/run/postgresql/.s.PGSQL.5432"</span>
+2022-06-27 07:38:35.944 UTC <span class="o">[</span>63] LOG:  database system was shut down at 2022-06-27 07:38:35 UTC
+2022-06-27 07:38:35.949 UTC <span class="o">[</span>1] LOG:  database system is ready to accept connections
+
+</code></pre></div></div>
+
+<p>connect to postgres using pgcli</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pgcli <span class="nt">-h</span> localhost <span class="nt">-p</span> 5432 <span class="nt">-u</span> root <span class="nt">-d</span> ny_taxi
+</code></pre></div></div>
+
+<p><img src="/blog/images/ps-start-2.png" alt="login postgres using pgcli"></p>
+
+<h3 id="3-import-taxi-data-to-postgres">
+<a class="anchor" href="#3-import-taxi-data-to-postgres" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. import taxi data to Postgres</h3>
+
+<p>install the python packages:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>pandas sqlalchemy
+</code></pre></div></div>
+<p>download the nyc taxi data</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wget https://s3.amazonaws.com/nyc-tlc/csv_backup/yellow_tripdata_2021-01.csv
+....
+$ wc -l yellow_tripdata_2021-01.csv
+1369770 yellow_tripdata_2021-01.csv
+</code></pre></div></div>
+
+<p>week1/import_data.py</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+
+<span class="c1"># create engine and set the root as postgresql://user:password@host:port/database
+</span><span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s">'postgresql://root:root@localhost:5432/ny_taxi'</span><span class="p">)</span>
+
+<span class="c1"># build a text iterrator with chunk size 100000
+</span><span class="n">df_iter</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'yellow_tripdata_2021-01.csv'</span><span class="p">,</span> <span class="n">iterator</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">df_iter</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">.</span><span class="n">tpep_pickup_datetime</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">tpep_pickup_datetime</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">.</span><span class="n">tpep_dropoff_datetime</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">tpep_dropoff_datetime</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'yellow_taxi_data'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s">'append'</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>run the scripts, but erros occured:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python import_data.py
+inserted another chunk..., took 8.551 seconds
+inserted another chunk..., took 8.318 seconds
+inserted another chunk..., took 8.301 seconds
+inserted another chunk..., took 8.303 seconds
+inserted another chunk..., took 8.312 seconds
+inserted another chunk..., took 8.294 seconds
+inserted another chunk..., took 8.454 seconds
+inserted another chunk..., took 8.303 seconds
+inserted another chunk..., took 8.250 seconds
+inserted another chunk..., took 8.291 seconds
+inserted another chunk..., took 8.383 seconds
+inserted another chunk..., took 8.283 seconds
+...
+
+</code></pre></div></div>
+
+<p>set <code class="language-plaintext highlighter-rouge">low_memory=False</code> in <code class="language-plaintext highlighter-rouge">read_csv</code> and run again:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>logging
+
+</code></pre></div></div>
+
+<p>login into database and see the nyc taxi data schema:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pgcli <span class="nt">-h</span> localhost <span class="nt">-p</span> 5432 <span class="nt">-u</span> root <span class="nt">-d</span> ny_taxi
+
+<span class="nv">$ </span>root@localhost:ny_taxi&gt; <span class="se">\d</span> yellow_taxi_data
++-----------------------+-----------------------------+-----------+
+| Column                | Type                        | Modifiers |
+|-----------------------+-----------------------------+-----------|
+| index                 | bigint                      |           |
+| VendorID              | bigint                      |           |
+| tpep_pickup_datetime  | timestamp without <span class="nb">time </span>zone |           |
+| tpep_dropoff_datetime | timestamp without <span class="nb">time </span>zone |           |
+| passenger_count       | bigint                      |           |
+| trip_distance         | double precision            |           |
+| RatecodeID            | bigint                      |           |
+| store_and_fwd_flag    | text                        |           |
+| PULocationID          | bigint                      |           |
+| DOLocationID          | bigint                      |           |
+| payment_type          | bigint                      |           |
+| fare_amount           | double precision            |           |
+| extra                 | double precision            |           |
+| mta_tax               | double precision            |           |
+| tip_amount            | double precision            |           |
+| tolls_amount          | double precision            |           |
+| improvement_surcharge | double precision            |           |
+| total_amount          | double precision            |           |
+| congestion_surcharge  | double precision            |           |
+| airport_fee           | double precision            |           |
++-----------------------+-----------------------------+-----------+
+Indexes:
+    <span class="s2">"ix_yellow_taxi_data_index"</span> btree <span class="o">(</span>index<span class="o">)</span>
+
+Time: 0.083s
+
+<span class="o">&gt;</span> SELECT COUNT<span class="o">(</span>1<span class="o">)</span> FROM yellow_taxi_data<span class="p">;</span>
++---------+
+| count   |
+|---------|
+| 6848845 |
++---------+
+SELECT 1
+Time: 1.690s <span class="o">(</span>1 second<span class="o">)</span>, executed <span class="k">in</span>: 1.675s <span class="o">(</span>1 second<span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="4-docker-compose">
+<a class="anchor" href="#4-docker-compose" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. docker-compose</h3>
+
+<p>got error:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker network create pg-network
+
+<span class="nv">$ </span>docker-compose up <span class="nt">-d</span>
+ERROR: The Compose file <span class="s1">'./docker-compose.yaml'</span> is invalid because:
+Unsupported config option <span class="k">for </span>services: <span class="s1">'pgadmin'</span>
+
+<span class="nv">$ </span>docker-compose <span class="nt">-v</span>
+docker-compose version 1.25.0, build unknown
+</code></pre></div></div>
+
+<p>add <code class="language-plaintext highlighter-rouge">version: '3.3'</code> to docker-compose.yaml and run again</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose up <span class="nt">-d</span>
+Creating network <span class="s2">"week1_default"</span> with the default driver
+Creating week1_pgdatabase_1 ... <span class="k">done
+</span>Creating week1_pgadmin_1    ... <span class="k">done</span>
+
+</code></pre></div></div>
+
+<h3 id="5-build-a-simple-pipline-with-docker">
+<a class="anchor" href="#5-build-a-simple-pipline-with-docker" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. build a simple pipline with docker</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">-t</span> taxi_ingest:v001 <span class="nb">.</span>
+</code></pre></div></div>
+<p>Then run the docker.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">URL</span><span class="o">=</span><span class="s2">"http://172.24.208.1:8000/yellow_tripdata_2021-01.csv"</span>
+
+<span class="nv">$ </span>docker run <span class="nt">-it</span> <span class="se">\</span>
+  <span class="nt">--network</span><span class="o">=</span>week1_default <span class="se">\</span>
+  taxi_ingest:v001 <span class="se">\</span>
+    <span class="nt">--user</span><span class="o">=</span>root <span class="se">\</span>
+    <span class="nt">--password</span><span class="o">=</span>root <span class="se">\</span>
+    <span class="nt">--host</span><span class="o">=</span>pg-database <span class="se">\</span>
+    <span class="nt">--db</span><span class="o">=</span>ny_taxi <span class="se">\</span>
+    <span class="nt">--port</span><span class="o">=</span>5432 <span class="se">\</span>
+    <span class="nt">--table_name</span><span class="o">=</span>yellow_taxi_trips <span class="se">\</span>
+    <span class="nt">--url</span><span class="o">=</span><span class="k">${</span><span class="nv">URL</span><span class="k">}</span>
+</code></pre></div></div>
+<p>Got an error:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlalchemy.exc.OperationalError: <span class="o">(</span>psycopg2.OperationalError<span class="o">)</span> could not translate host name <span class="s2">"pg-database"</span> to address: Temporary failure <span class="k">in </span>name resolution
+
+<span class="c"># need change the postgres host per docke-compose.yaml</span>
+<span class="c"># use hostname: pgdatabase</span>
+<span class="nv">$ </span>docker run <span class="nt">-it</span> <span class="se">\</span>
+  <span class="nt">--network</span><span class="o">=</span>week1_default <span class="se">\</span>
+  taxi_ingest:v001 <span class="se">\</span>
+    <span class="nt">--user</span><span class="o">=</span>root <span class="se">\</span>
+    <span class="nt">--password</span><span class="o">=</span>root <span class="se">\</span>
+    <span class="nt">--host</span><span class="o">=</span>pgdatabase <span class="se">\</span>
+    <span class="nt">--db</span><span class="o">=</span>ny_taxi <span class="se">\</span>
+    <span class="nt">--port</span><span class="o">=</span>5432 <span class="se">\</span>
+    <span class="nt">--table_name</span><span class="o">=</span>yellow_taxi_trips <span class="se">\</span>
+    <span class="nt">--url</span><span class="o">=</span><span class="k">${</span><span class="nv">URL</span><span class="k">}</span>
+inserted another chunk..., took 9.058 seconds
+inserted another chunk..., took 9.044 seconds
+inserted another chunk..., took 8.881 seconds
+inserted another chunk..., took 8.875 seconds
+inserted another chunk..., took 8.963 seconds
+</code></pre></div></div>
+<p>Then access pgAdmin by <code class="language-plaintext highlighter-rouge">localhost:8080</code>, username: <code class="language-plaintext highlighter-rouge">admin@admin.com</code>, pass:<code class="language-plaintext highlighter-rouge">root</code>
+<img src="/blog/images/pgadmin4-1.png" alt="pgAdmin4">.</p>
+
+<p>Add a host: pgdatabase, user:root, pass:root.
+View the table <code class="language-plaintext highlighter-rouge">yellow_taxi_data</code> and make a query.</p>
+
+<p><img src="/blog/images/pgadmin4-2.png" alt="table schema"></p>
+
+<p><img src="/blog/images/pgadmin4-3.png" alt="query nyx taxi records"></p>
+
+<h2 id="additional-note">
+<a class="anchor" href="#additional-note" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional Note</h2>
+
+<p>When import parquet format into database, there was an error:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import_data.py:13: DtypeWarning: Columns <span class="o">(</span>6<span class="o">)</span> have mixed types. Specify dtype option on import or <span class="nb">set </span><span class="nv">low_memory</span><span class="o">=</span>False.
+  <span class="k">for </span>chunk <span class="k">in </span>df_iter:
+inserted another chunk..., took 8.111 seconds
+inserted another chunk..., took 5.250 seconds
+</code></pre></div></div>
+
+<p>The records  in the table  only has 6848845 rows.
+<strong>TODO</strong> Fix error in parquet format.</p>
+
+<h3 id="how-to-fix-column6-mixed-data-type">
+<a class="anchor" href="#how-to-fix-column6-mixed-data-type" aria-hidden="true"><span class="octicon octicon-link"></span></a>how to fix column(6) mixed data type?</h3>
+
+<p>col(6)=’store_and_fwd_flag’ is char of ‘Y’ OR ‘N’,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1,2021-01-01 00:30:10.000000,2021-01-01 00:36:12.000000,1,2.1,1,"N",142,43,2,8,3,0.5,0,0,0.3,11.8,2.5,
+
+</code></pre></div></div>
+
+  </div><a class="u-url" href="/blog/data/2022/06/24/data-camp-week-1.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>The learning journey. Learning in Public.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/farlandliu" target="_blank" title="farlandliu"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
